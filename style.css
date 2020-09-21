@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  /* Use to Create Multiple cards */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #2a2e4d;
+}
+
+.container {
+  width: 1140px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  /* justify-content: space-between; */
+  /* Use to Create Multiple cards */
+}
+
+.container .card {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 10%;
+  box-shadow: 6px 6px 3px 1px rgba(51, 56, 92, 0.5);
+}
+
+.container .card .card-body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10%;
+  transition: 0.5s;
+}
+
+.container .card .card-body.front {
+  background: #33385c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  transform-origin: bottom;
+}
+
+.container .card .card-body.front img {
+  max-width: 150px;
+  margin: auto;
+}
+
+.container .card .card-body.front h3 {
+  margin: 10px 0 0;
+  color: #fcfcfc;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.container .card:hover .card-body.front {
+  transform: translateY(-100%) rotateX(90deg);
+  background: #f81271;
+}
+
+.container .card .card-body.back {
+  background: #fcfcfc;
+  color: #2a2e4d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  transform-origin: top;
+  transform: translateY(100%) rotateX(90deg);
+}
+
+.container .card:hover .card-body.back {
+  transform: translateY(0) rotateX(0);
+}
